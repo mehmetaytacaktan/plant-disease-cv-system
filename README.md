@@ -1,23 +1,36 @@
-# Plant Disease Computer Vision System 🍃
+# 🪴 Plant Disease Detection API (YOLOv8 & FastAPI)
 
-An end-to-end Computer Vision pipeline designed for precision agriculture to detect plant leaf diseases and nutrient deficiencies. Built with **YOLOv8**, served via **FastAPI**, and production-ready with **Docker**.
+This project is a production-ready **Artificial Intelligence Microservice (Backend)** architecture designed to classify plant leaf diseases. It leverages an optimized **YOLOv8 (YOLOv8n-cls)** image classification model trained on a custom dataset and exposes it via a high-performance REST API.
 
-## 🛠️ Tech Stack & Architecture
-* **Model:** YOLOv8 (Fine-tuned via Transfer Learning on the PlantVillage dataset)
-* **Backend:** FastAPI (Asynchronous REST API)
-* **DevOps:** Docker, VPS Deployment, Nginx
+To eliminate environment mismatch issues ("it works on my machine") and ensure platform-independent scalability, the entire application is fully **Dockerized** and continuously deployed on **Hugging Face Spaces** (Docker SDK).
 
 ---
 
-## 🚀 System Architecture
-1. **Data Pipeline:** Preprocessing plant leaf images and training a custom YOLOv8 classification model using Google Colab (T4 GPU).
-2. **API Layer:** Serving the model weights (`.pt`) via a high-performance, asynchronous FastAPI backend.
-3. **Containerization:** Packaging the runtime environment into a lightweight Docker container for seamless deployment.
+## 🚀 Live API & Documentation
+* **Interactive API Documentation :** `https://musashivulpix-plant-disease-cv-system.hf.space/docs`
 
 ---
 
-## 📌 Roadmap & Current Status
-- [x] GitHub Repository Setup & Profile Alignment
-- [x] Model Training & Hyperparameter Tuning (YOLOv8)
-- [x] FastAPI Backend Development & Local Testing 
-- [ ] Dockerization &  HuggingFace Space Tests <!-- Current Stage -->
+## 🛠️ Architecture & Tech Stack
+
+The system is engineered following modern MLOps (Machine Learning Operations) best practices, featuring a layered and decoupled architecture:
+
+* **AI & Computer Vision Core:** Ultralytics YOLOv8n-cls (utilizing a custom-trained `best.pt` weights file).
+* **Web Framework:** FastAPI (chosen for its asynchronous capabilities, high concurrency performance, and native OpenAPI/Swagger integration).
+* **ASGI Server:** Uvicorn (lightning-fast production web server).
+* **Containerization:** Docker (utilizing a highly optimized Debian Slim base image).
+* **Image Processing:** OpenCV (OpenCV-Python) & Pillow.
+* **Cloud Deployment:** Hugging Face Spaces Cloud Infrastructure.
+
+---
+
+## 📦 Project Structure
+
+```text
+.
+├── weights/
+│   └── best.pt          # Custom-trained YOLOv8 classification weights
+├── main.py              # FastAPI application core & inference logic
+├── Dockerfile           # Layered Docker image configuration
+├── requirements.txt     # Python dependency manifest
+└── README.md            # Project documentation
