@@ -20,5 +20,4 @@ An end-to-end Computer Vision pipeline designed for precision agriculture to det
 - [x] GitHub Repository Setup & Profile Alignment
 - [x] Model Training & Hyperparameter Tuning (YOLOv8)
 - [x] FastAPI Backend Development & Local Testing 
-- [ ] Dockerization & Local Container Tests <!-- Current Stage -->
-- [ ] Remote VPS Deployment & Nginx Reverse Proxy Configuration
+- [ ] Dockerization &  HuggingFace Space Tests <!-- Current Stage -->
